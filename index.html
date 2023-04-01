@@ -11,7 +11,7 @@
 <body>
   <div>
     <header class="header">
-      <img src="./images/logo.svg" alt="logo">
+      <img class="header__logo" src="./images/logo.svg" alt="logo">
     </header>
     <main class="main">
       <div class="main__inputs">
@@ -35,17 +35,24 @@
           <input type="number" id="people" placeholder="0">
         </div>
       </div>
-      <section class="main__result">
-        <div class="result__tip">
-          <p>Tip Amount</p>
-          <p class="result__tip__amount" id="tip-amount">/ person</p>
+      <section class="main__results">
+        <div class="results__tip">
+          <div>
+            <p>Tip Amount</p>
+            <p class="results__perperson">/ person</p>
+          </div>
+          <p id="tip-amount" class="results__tip__amount">$0.00</p>
         </div>
-        <div class="result__total">
-          <p>Total</p>
-          <p class="result__total__amount" id="total-amount">/ person</p>
+        <div class="results__total">
+          <div>
+
+            <p>Total</p>
+            <p class="results__perperson">/ person</p>
+          </div>
+          <p id="total-amount" class="results__total__amount">$0.00</p>
         </div>
-        <div class="main__result__reset">
-          <button class="reset__button" id="reset">Reset</button>
+        <div class="main__results__reset">
+          <button class="reset__button" id="reset" disabled>Reset</button>
         </div>
       </section>
     </main>

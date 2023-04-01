@@ -1,19 +1,19 @@
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
 
 /* Global */
 :root {
-    /* Colors */
-    --prim-strong-cyan: 172, 67%, 45%;
-    --neut-very-dark-cyan: 183, 100%, 15%;
-    --neut-dark-grayish-cyan: 186, 14%, 43%;
-    --neut-grayish-cyan: 184, 14%, 56%;
-    --neut-light-grayish-cyan: 185, 41%, 84%;
-    --neut-very-light-grayish-cyan: 189, 41%, 97%;
-    --neut-white: 0, 0%, 100%;
-    /* font */
-    --font-family: 'Space Mono', monospace;
-    --font-size: 1.5rem;
+  /* Colors */
+  --prim-strong-cyan: 172, 67%, 45%;
+  --neut-very-dark-cyan: 183, 100%, 15%;
+  --neut-dark-grayish-cyan: 186, 14%, 43%;
+  --neut-grayish-cyan: 184, 14%, 56%;
+  --neut-light-grayish-cyan: 185, 41%, 84%;
+  --neut-very-light-grayish-cyan: 189, 41%, 97%;
+  --neut-white: 0, 0%, 100%;
+  /* font */
+  --font-family: "Space Mono", monospace;
+  --font-size: 1.5rem;
 }
 /* css reset */
 /* Box sizing rules */
@@ -38,8 +38,8 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
+ul[role="list"],
+ol[role="list"] {
   list-style: none;
 }
 
@@ -78,9 +78,9 @@ select {
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
-   scroll-behavior: auto;
+    scroll-behavior: auto;
   }
-  
+
   *,
   *::before,
   *::after {
@@ -92,7 +92,137 @@ select {
 }
 /* end css reset */
 
+body {
+  background-color: hsl(var(--neut-light-grayish-cyan));
+  font-family: var(--font-family);
+  color: hsl(var(--neut-dark-grayish-cyan));
+}
+
+input {
+  font-size: var(--font-size);
+  padding: 0.2rem 1rem;
+  border-radius: 0.5rem;
+  background-color: hsl(var(--neut-very-light-grayish-cyan));
+  color: hsl(var(--neut-dark-grayish-cyan));
+  border: 1px solid hsl(var(--neut-very-light-grayish-cyan));
+  text-align: right;
+}
+
+input::placeholder {
+  color: hsl(var(--neut-grayish-cyan));
+}
+
+input:focus {
+  outline: none;
+}
+
+.header {
+  padding: 2.5rem;
+}
+
+.header__logo {
+  margin: 0 auto;
+}
+
+.main {
+  background-color: hsl(var(--neut-white));
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+}
+
+.main__inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: 1.5rem;
+}
+
+:is(.main__inputs__bill, .main__inputs__people) > input {
+  display: block;
+  margin-block: 0.75rem;
+  background: url("./images/icon-dollar.svg") no-repeat 1rem center;
+  background-color: hsl(var(--neut-very-light-grayish-cyan));
+}
+
+.main__inputs__people > input {
+  background: url("./images/icon-person.svg") no-repeat 1rem center;
+  background-color: hsl(var(--neut-very-light-grayish-cyan));
+}
+
+.main__inputs__tip__buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-block: 1rem;
+}
+.tip__button {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  background-color: hsl(var(--neut-very-dark-cyan));
+  color: hsl(var(--neut-white));
+  border: none;
+  font-size: var(--font-size);
+  cursor: pointer;
+}
+
+.main__inputs__tip__buttons > input {
+  width: 100%;
+}
+
+/* Displaying the results */
+.main__results {
+  background-color: hsl(var(--neut-very-dark-cyan));
+  color: hsl(var(--neut-white));
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
+
+.results__tip,
+.results__total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 0;
+}
+
+.results__tip__amount,
+.results__total__amount {
+  font-size: 1.5rem;
+  color: hsl(var(--prim-strong-cyan));
+}
+
+.results__perperson {
+  font-size: 0.85rem;
+  color: hsl(var(--neut-grayish-cyan));
+}
+
+.reset__button {
+  width: 100%;
+  margin-top: 0.75rem;
+  padding: 0.5rem 1.5rem;
+  text-transform: uppercase;
+  background-color: hsl(var(--prim-strong-cyan));
+  color: hsl(var(--neut-very-dark-cyan));
+  border: none;
+  border-radius: 0.3rem;
+}
+
+.reset__button:disabled {
+    background-color: hsla(var(--prim-strong-cyan), 0.4);
+  cursor: not-allowed;
+}
 
 
+@media screen and (min-width: 768px) {
+    /* body {
+        width: min(90%, 1000px);
+        margin: 0 auto;
+    }
 
-
+    .main {
+        display: flex;
+        justify-content: space-between;
+    } */
+}
