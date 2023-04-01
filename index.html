@@ -9,5 +9,46 @@
   <title>Tip calculator app | Frontend Mentor</title>
 </head>
 <body>
+  <div>
+    <header class="header">
+      <img src="./images/logo.svg" alt="logo">
+    </header>
+    <main class="main">
+      <div class="main__inputs">
+        <div class="main__inputs__bill">
+          <label for="bill">Bill</label>
+          <input type="number" id="bill" placeholder="0">
+        </div>
+        <div class="main__inputs__tip">
+          <label for="tip">Select Tip %</label>
+          <div class="main__inputs__tip__buttons">
+            <button class="tip__button" id="tip-5">5%</button>
+            <button class="tip__button" id="tip-10">10%</button>
+            <button class="tip__button" id="tip-15">15%</button>
+            <button class="tip__button" id="tip-25">25%</button>
+            <button class="tip__button" id="tip-50">50%</button>
+            <input type="number" id="custom" placeholder="Custom">
+          </div>
+        </div>
+        <div class="main__inputs__people">
+          <label for="people">Number of People</label>
+          <input type="number" id="people" placeholder="0">
+        </div>
+      </div>
+      <section class="main__result">
+        <div class="result__tip">
+          <p>Tip Amount</p>
+          <p class="result__tip__amount" id="tip-amount">/ person</p>
+        </div>
+        <div class="result__total">
+          <p>Total</p>
+          <p class="result__total__amount" id="total-amount">/ person</p>
+        </div>
+        <div class="main__result__reset">
+          <button class="reset__button" id="reset">Reset</button>
+        </div>
+      </section>
+    </main>
+  </div>
 </body>
 </html>
