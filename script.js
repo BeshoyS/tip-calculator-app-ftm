@@ -8,6 +8,8 @@ const resetBtn = document.getElementById("reset");
 /* Results */
 const tipAmount = document.getElementById("tip-amount");
 const totalAmount = document.getElementById("total-amount");
+/* error */
+const errorMsg = document.querySelector(".error-text");
 
 let bill = 0;
 let people = 0;
@@ -21,7 +23,14 @@ function getInputsData() {
     calculateTip();
   } else if (this.id === "people") {
     people = parseInt(this.value);
-    calculateTip();
+    if (people < 1) {
+      peopleNum.classList.add("main__inputs--error");
+      errorMsg.style.display = "block";
+    } else {
+      peopleNum.classList.remove("main__inputs--error");
+      errorMsg.style.display = "none";
+      calculateTip();
+    }
   }
 }
 

@@ -11,6 +11,7 @@
   --neut-light-grayish-cyan: 185, 41%, 84%;
   --neut-very-light-grayish-cyan: 189, 41%, 97%;
   --neut-white: 0, 0%, 100%;
+  --neut-red: 354, 70%, 54%;
   /* font */
   --font-family: "Space Mono", monospace;
   --font-size: 1.5rem;
@@ -155,13 +156,25 @@ input::-webkit-inner-spin-button {
   background-color: hsl(var(--neut-very-light-grayish-cyan));
 }
 
-.main__inputs--error {
-  outline: 1.5px solid red;
+.main__inputs__people {
+  position: relative;
+}
+
+.error-text {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0.1rem;
+  color: hsl(var(--neut-red));
 }
 
 .main__inputs__people > input {
   background: url("./images/icon-person.svg") no-repeat 1rem center;
   background-color: hsl(var(--neut-very-light-grayish-cyan));
+}
+
+.main__inputs--error {
+  outline: 2px solid hsl(var(--neut-red));
 }
 
 .main__inputs__tip__buttons {
@@ -277,6 +290,4 @@ input::-webkit-inner-spin-button {
   .main__results__reset {
     align-self: end;
   }
-
-
 }
