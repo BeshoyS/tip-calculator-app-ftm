@@ -1,64 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="style.css">
-  
-  <title>Tip calculator app | Frontend Mentor</title>
-</head>
-<body>
-  <div>
-    <header class="header">
-      <img class="header__logo" src="./images/logo.svg" alt="logo">
-    </header>
-    <main class="main">
-      <div class="main__inputs">
-        <div class="main__inputs__bill">
-          <label for="bill">Bill</label>
-          <input type="number" id="bill" placeholder="0">
-        </div>
-        <div class="main__inputs__tip">
-          <label for="tip">Select Tip %</label>
-          <div class="main__inputs__tip__buttons">
-            <button class="tip__button" id="tip-5">5%</button>
-            <button class="tip__button" id="tip-10">10%</button>
-            <button class="tip__button" id="tip-15">15%</button>
-            <button class="tip__button" id="tip-25">25%</button>
-            <button class="tip__button" id="tip-50">50%</button>
-            <input type="number" id="custom" placeholder="Custom">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Tip calculator app | Frontend Mentor</title>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div>
+      <header class="header">
+        <img class="header__logo" src="./images/logo.svg" alt="logo" />
+      </header>
+      <main class="main">
+        <div class="main__inputs">
+          <div class="main__inputs__bill">
+            <label for="bill">Bill</label>
+            <input
+              type="number"
+              id="bill"
+              placeholder="0"
+              pattern="^[0-9.]*$"
+            />
           </div>
-        </div>
-        <div class="main__inputs__people">
-          <label for="people">Number of People</label>
-          <input type="number" id="people" placeholder="0">
-        </div>
-      </div>
-      <section class="main__results">
-        <div>
-
-          <div class="results__tip">
-            <div>
-              <p>Tip Amount</p>
-              <p class="results__perperson">/ person</p>
+          <div class="main__inputs__tip">
+            <label for="tip">Select Tip %</label>
+            <div class="main__inputs__tip__buttons">
+              <button class="tip__button" id="tip-5" data-percent="0.05">5%</button>
+              <button class="tip__button" id="tip-10" data-percent="0.1">10%</button>
+              <button class="tip__button" id="tip-15" data-percent="0.15">15%</button>
+              <button class="tip__button" id="tip-25" data-percent="0.25">25%</button>
+              <button class="tip__button" id="tip-50" data-percent="0.5">50%</button>
+              <input type="number" id="tip-custom" placeholder="Custom" />
             </div>
-            <p id="tip-amount" class="results__tip__amount">$0.00</p>
-        </div>
-        <div class="results__total">
-          <div>
-
-            <p>Total</p>
-            <p class="results__perperson">/ person</p>
           </div>
-          <p id="total-amount" class="results__total__amount">$0.00</p>
+          <div class="main__inputs__people">
+            <label for="people">Number of People</label>
+            <input type="number" id="people" placeholder="0" />
+          </div>
         </div>
-      </div>
-        <div class="main__results__reset">
-          <button class="reset__button" id="reset" disabled>Reset</button>
-        </div>
-      </section>
-    </main>
-  </div>
-</body>
+        <section class="main__results">
+          <div>
+            <div class="results__tip">
+              <div>
+                <p>Tip Amount</p>
+                <p class="results__perperson">/ person</p>
+              </div>
+              <p id="tip-amount" class="results__tip__amount">$0.00</p>
+            </div>
+            <div class="results__total">
+              <div>
+                <p>Total</p>
+                <p class="results__perperson">/ person</p>
+              </div>
+              <p id="total-amount" class="results__total__amount">$0.00</p>
+            </div>
+          </div>
+          <div class="main__results__reset">
+            <button class="reset__button" id="reset" disabled="false">
+              Reset
+            </button>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
 </html>

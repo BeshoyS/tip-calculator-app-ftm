@@ -179,7 +179,7 @@ input::-webkit-inner-spin-button {
   border: none;
   font-size: var(--font-size);
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.2s;
 }
 
 .tip__button:hover {
@@ -189,6 +189,7 @@ input::-webkit-inner-spin-button {
 
 .tip__button--active {
   background-color: hsl(var(--prim-strong-cyan));
+  color: hsl(var(--neut-very-dark-cyan));
 }
 
 .main__inputs__tip__buttons > input {
